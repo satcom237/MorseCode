@@ -2,6 +2,7 @@
  *Program: 	x5F.cpp
  *Author: 	Sathya Ramanathan
  *Date: 	2/28/2016
+ hi
  *Description: 	Asks user to enter text or morse, which will then be converted to
 		morse or text respectively
 ***********************************************************************************/
@@ -19,16 +20,16 @@ int main()
 	string option = "";
 	cout << "Do you want to translate (1)Text to Morse Code or translate (2)Morse code to Text?: ";
 	getline(cin, option);
-    
+
 	string const morseCode[] = {".-", "-...", "-.-.", "-..", ".", "..-.",
     	"--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-",
     	".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", " ", "       "};
-	
-	string const englishLetter[] = {"A", "B", "C", "D", "E", "F", 
-	"G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", 
+
+	string const englishLetter[] = {"A", "B", "C", "D", "E", "F",
+	"G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S",
 	"T", "U", "V", "W", "X", "Y", "Z", "", " "};
-	
-	if (option == "1"){	
+
+	if (option == "1"){
 		string input = "";
 		cout << "Enter Text Message: ";
 		getline(cin, input);
@@ -38,8 +39,8 @@ int main()
 		}
 		cout << convertToMorse(uppercaseInput, morseCode, englishLetter) << endl;
 		cout << endl;
-	} 
-	
+	}
+
 	else if (option == "2"){
 		string input = "";
 		cout << "Enter Morse Code: ";
@@ -48,7 +49,7 @@ int main()
 		cout << convertToEnglish(input, morseCode, englishLetter) << endl;
 		cout << endl;
 	}
-	
+
 	else{
 		cout << "Invalid input, please try again" << endl;
 	}
@@ -67,7 +68,7 @@ string convertToMorse(string english, string const morseCode[], string const alp
 		currentLetter = string(1, english[position]);
 		int marker = 0;
 		string addition = "";
-		while (marker < 28){			
+		while (marker < 28){
 			if (currentLetter == alpha[marker]){
 				addition = morseCode[marker];
 			}
@@ -93,4 +94,3 @@ string convertToEnglish(string morse, string const morseCode[], string const alp
     	}
 	return output;
 }
-
